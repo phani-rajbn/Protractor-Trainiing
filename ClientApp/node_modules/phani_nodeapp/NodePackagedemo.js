@@ -1,0 +1,3 @@
+//NPM is the package manager for Node Apps...It allows to install packages from a repository and publish UR own pacakges. npm is a public registry of the node packages available in the 
+//npm website, create a login account. U could use this accout to store UR Modules and distribute UR Apps...
+//Create a Package. A Package is a folder which  has a file called Package.json. There is a wizard that allows to create the package.json file. npm init. 

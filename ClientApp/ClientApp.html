@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="empRestClient" ng-controller="empController">
+    <div style="display:inline-block; width:50%">
+    <table border="1">
+        <tr ng-repeat="item in AllEmployees">
+            <td>{{item.ID}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Address}}</td>
+            <td><a href="#" ng-click="find(item.ID)">Edit</a></td>
+        </tr>
+    </table>
+    </div>
+    <div style="display:inline-block; width:40%">
+        <p><input value="{{selectedEmp.ID}}"/></p>
+        <p><input value="{{selectedEmp.Name}}"/></p>
+        <p><input value="{{selectedEmp.Address}}"/></p>
+    </div>
+</body>
+</html>
