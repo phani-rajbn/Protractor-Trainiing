@@ -1,16 +1,20 @@
 module.exports = (function(){
-    function getAllRecords(){
+    function getAllRecords(res){
         var client = require('mongodb').MongoClient;
         var url = 'mongodb://localhost:27017/sampleDatabase';//connection url of UR database
         client.connect(url, function(err, db){
             console.log("Connected");
-            var list =[]
-            var cursor = db.collection('Employees').find();
-            cursor.each(function(err, doc){
-                list.push(doc);
+            let list = new Array();
+            // var cursor = db.collection('Employees').find();
+            // cursor.each(function(err, doc){
+            //     list.push(doc);
+            // })
+            db.collection("Employees").find().toArray(function(err, results){
+                res.send(results);
+                db.close();
+
             })
-            db.close();  
-            return list;
+            
         })
     }
     function insertRec(emp){
@@ -20,7 +24,7 @@ module.exports = (function(){
             console.log("Connected");
             db.collection("Employees").insertOne({
                 "EmpID" : emp.EmpID,
-                "Empname" : emp.Empname,
+                "EmpName" : emp.EmpName,
                 "EmpAddress" :emp.EmpAddress
              })
             console.log("Employee inserted")

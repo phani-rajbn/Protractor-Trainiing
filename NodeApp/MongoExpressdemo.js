@@ -10,9 +10,8 @@ ex.use(bp.urlencoded({extended:false}));
 ex.use(bp.json());
 
 ex.get('/AllEmployees', function(req, res){
-    var data = server.GetAll();
-    console.log(data);
-    res.json(data);
+    server.GetAll(res);
+    console.log("Getting Records");
 })
 
 ex.post("/AllEmployees", function(req, res){
