@@ -4,11 +4,13 @@ module.exports = (function(){
         var url = 'mongodb://localhost:27017/sampleDatabase';//connection url of UR database
         client.connect(url, function(err, db){
             console.log("Connected");
+            var list =[]
             var cursor = db.collection('Employees').find();
             cursor.each(function(err, doc){
-                console.log(doc)//printing the results on the Console...
+                list.push(doc);
             })
-            db.close();
+            db.close();  
+            return list;
         })
     }
     function insertRec(emp){
@@ -30,8 +32,11 @@ module.exports = (function(){
         var client = require('mongodb').MongoClient;
         var url = 'mongodb://localhost:27017/sampleDatabase';//connection url of UR database
         client.connect(url, function(err, db){
-            db.collection("Employees").deleteOne({"EmpID":id});
-            db.close();
+            console.log(typeof(id))
+            var empid = parseInt(id);
+            db.collection("Employees").deleteOne({"EmpID":empid});
+            console.log("Employee deleted");
+            db.close();            
         })
     }
     return {
