@@ -1,0 +1,16 @@
+NodeJS unit testing with jasmine.
+For Nodejs we have 2 Testing Frameworks: Jasmine and Mocha.
+First framework for Unit testing in Javascript: JsUnit which is now called as Jasmine.
+Jasmine is BDD. It does not depend on browsers, DOM or any external JS Frameworks. Suited for testing UR JS code and NodeJs Code. It can be used on any App where JS is running. 
+Step1: npm jasmine-node
+Step2: Create Test Suites
+Step3: Create the Code that satisfies the Suited
+Step4 : Execute the Jasmine to test the code...
+
+//Commands:
+npm init -y for creating the default package.json
+npm install jasmine-node for installing the jasmine package 
+npm install jasmine for generating HTML files for Unit Test results.
+jasmine init will create config and spec folder where the specs are created
+
+
