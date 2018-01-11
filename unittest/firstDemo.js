@@ -1,3 +1,4 @@
+var fs = require("fs");
 var exports = module.exports = { }
 exports.addFunc = function(v1, v2){
     return v1 + v2;
@@ -27,3 +28,36 @@ exports.mathCalc = function(){
         return this.currVal;
     }
 }
+
+
+
+exports.getResult = function(value){
+    var fruits = [
+        "apple","mango","orange"
+    ]
+    for (var key in fruits) {
+        if(fruits[key] == value)
+        return true;
+    }
+    return false;
+}
+
+exports.getArray = function(){
+    var data = fs.readFileSync("../NodeApp/MyData.json");
+    var json = JSON.parse(data.toString());
+    console.log(json.length)
+    return json;
+    //get the JSON data from a json file...
+    //return [2,3,4,5];
+}
+
+exports.findEmp = function(name){
+    var data = fs.readFileSync("../NodeApp/MyData.json");
+    var json = JSON.parse(data.toString());
+    for (var i = 0; i < json.length; i++) {
+        if(json[i].Name == name)
+            return json[i];        
+    }
+    return null;
+    //throw new Error("Employee " + name +" not found")
+}   
