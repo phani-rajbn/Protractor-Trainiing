@@ -9,18 +9,58 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-mocks.js"></script>
+    <script src="../Scripts/ControllerCode.js"></script>
     <title>Angular JS unit testing</title>
 </head>
 <body>
     <script>
-        var calc = {
-            sum : (a, b)=> a + b,
-            sub : (a, b)=> a - b,
-        }
+        var app = angular.module("app", []);
+app.controller("myController", function($scope){  
+    $scope.math = {}
+    
+    $scope.result = 0
+    $scope.value1 = 0
+    $scope.value2 = 0
+    
+    $scope.math.addFunc = function(){
+        $scope.result = $scope.value1  + $scope.value2
+    }
+
+    $scope.math.subFunc = function(){
+        $scope.result = $scope.value1  - $scope.value2
+    }
+
+    $scope.math.mulFunc = function(){
+        $scope.result = $scope.value1  * $scope.value2
+    }
+})
+        // var calc = {
+        //     sum : (a, b)=> a + b,
+        //     sub : (a, b)=> a - b,
+        // }
         describe("test", function(){
-            describe("adding", function(){
-                it('adding func', function(){
-                    expect(calc.sum(2,3)).toBe(5)
+            // describe("adding", function(){
+            //     it('adding func', function(){
+            //         expect(calc.sum(2,3)).toBe(5)
+            //     })
+            // })
+
+            beforeEach(angular.mock.module('app'))
+            var $controller;
+
+            beforeEach(angular.mock.inject(function(_$controller_){
+                $controller = _$controller_    
+            }));
+
+            describe('mathCalc', function(){
+                it("Should add 2 numbers", function(){
+                    $scope ={};
+                    var controller = $controller('myController', {$scope: $scope})
+                    $scope.value1 = 3
+                    $scope.value2 = 2
+                    $scope.math.addFunc();
+                    expect($scope.result).toBe(55) 
                 })
             })
         })

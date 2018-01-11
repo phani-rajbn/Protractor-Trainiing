@@ -1,5 +1,5 @@
 var app = angular.module("app", []);
-var controller = app.controller("myController", function($scope){  
+app.controller("myController", function($scope){  
     $scope.math = {}
     
     $scope.result = 0
