@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller('calcCtrl', function($scope){
+            $scope.v1 = 0;
+            $scope.v2 = 0;
+            $scope.result = 0;
+            $scope.addFunc = function(){
+                $scope.result = $scope.v1 + $scope.v2;
+            }
+        })
+    </script>
+    <title>Calc Program</title>
+</head>
+<body ng-app="app" ng-controller="calcCtrl">
+    <h1>Calc App</h1>
+    <p>
+        <input type="number" ng-model="v1" name="v1" placeholder="Enter v1"/>  
+    </p>
+    <p>
+        <input type="number" name="v2"  ng-model="v2" placeholder="Enter v2"/>  
+    </p>
+    <p>
+        <button id="btnClick" ng-click="addFunc()">Click me</button>
+    </p>
+    <p>
+        The result of this operation is {{result}}
+    </p>
+</body>
+</html>

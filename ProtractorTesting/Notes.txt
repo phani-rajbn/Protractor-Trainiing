@@ -1,0 +1,5 @@
+Protractor is E2E Testing, majorly used for testing AngularJs and Angular Applications
+Test it like a Tester.: WOrks as a wrappter over the Web Driver API and is built on WEebDriverJs that uses native events and browser specific Drivers to interact with the web based apps as any normal user would do...
+For Angular Apps: Angular provides a good support for Protractor to be used as e2e testing framework. Even the Angular dev frameworks like Angular-CLI promotes the sample code snippets to use protractor. 
+It has automatic waiting so that U dont have to create any waits or sleeps to UR tests. Many async tasks are handled internally by protractor, where we could have scenarios on what to do after the browser loads the page, or when a specific task is performed on the page asynchronously.
+Install NodeJs, Install protractor, Write UR tests using Mocha or Jasmine frameworks, configure UR tests using package.json and finally execute them
