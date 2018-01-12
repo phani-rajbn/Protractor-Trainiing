@@ -53,6 +53,7 @@ app.controller("myController", function($scope){
                 $controller = _$controller_    
             }));
 
+            beforeEach(angular.mock.inject(function()))
             describe('mathCalc', function(){
                 it("Should add 2 numbers", function(){
                     $scope ={};
@@ -60,7 +61,7 @@ app.controller("myController", function($scope){
                     $scope.value1 = 3
                     $scope.value2 = 2
                     $scope.math.addFunc();
-                    expect($scope.result).toBe(55) 
+                    expect($scope.result).toBe(5) 
                 })
             })
         })

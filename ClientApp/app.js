@@ -34,10 +34,22 @@ app.service('empService', function($http){
     }
 });
 
-app.controller('empController', function($scope, empService){
+app.controller("Ctrl1", function($rootScope, $scope){
+    $scope.Message = "Welcome";
+    $scope.onClick = function(){
+        $rootScope.Title = $scope.Message        
+    }
+})
+
+app.controller("Ctrl2", function($rootScope, $scope){
+    $scope.Message = $rootScope.Title
+})
+
+app.controller('empController', function($rootScope, $scope, empService){
     getAllRecords();
     function getAllRecords() {
         var p = empService.GetAllEmployees();
+        console.log("Back to work...")
         p.then(function(res){
             $scope.AllEmployees = res.data;
         })
