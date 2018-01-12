@@ -7,12 +7,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
     <script>
         var app = angular.module("app",[]);
+
+        
         app.controller('calcCtrl', function($scope){
             $scope.v1 = 0;
             $scope.v2 = 0;
             $scope.result = 0;
             $scope.addFunc = function(){
                 $scope.result = $scope.v1 + $scope.v2;
+            }
+            $scope.subFunc = function(){
+                $scope.result = $scope.v1 - $scope.v2;
             }
         })
     </script>
@@ -28,6 +33,7 @@
     </p>
     <p>
         <button id="btnClick" ng-click="addFunc()">Click me</button>
+        <button id="btnSubtract" ng-click="subFunc()">Click me</button>
     </p>
     <p>
         The result of this operation is {{result}}

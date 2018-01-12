@@ -1,7 +1,22 @@
 exports.config={
     framework : 'jasmine',
     seleniumAddress:'http://localhost:4444/wd/hub',
-    specs:['spec.js']
+    specs:['spec1.js','spec2.js']
+    // multiCapabilities: [
+    //     {
+    //         shardTestFiles: true,
+    //         maxInstances: 1,
+    //         sequential: true,
+    //         browserName: 'chrome',
+    //         specs: ['spec1.js']
+    //     },
+    //     {
+    //         shardTestFiles: true,
+    //         maxInstances: 1,
+    //         sequential: true,
+    //         browserName: 'chrome',
+    //         specs: ['spec2.js']
+    //     }]
     // multiCapabilities:[{
     //     browserName :'firefox'
     // },{
