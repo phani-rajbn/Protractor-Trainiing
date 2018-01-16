@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Application management</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="angular.min.js"></script>
     <script src="./script.js"></script>    
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="myApp">
     <table id="table1" style="margin:3px auto;">
-        <tr class="head">
-            <td class="left" colspan="2"></td>
+        <tr>
+            <td colspan="2"></td>
         </tr>
         <tr>
-            <td class="content">
-                <div>
+            <td>
+                <div ng-controller="myController">
                     <h1>Welcome to my App</h1>
                     <p>
                         Thanks for the interest in our App. <br />
@@ -23,7 +20,7 @@
                         <input type="text" ng-model='person.name'/>
                     </p>
                     <h1>{{person.name}}</h1>
-                    <button name="button" onclick="window.location='http://localhost:8080/animalselection.html'">Continue</button>
+                    <button name="button" onclick="window.location='animalselection.html'">Continue</button>
                 </div>
             </td>
         </tr>

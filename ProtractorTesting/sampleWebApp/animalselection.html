@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select UR Animal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="./script.js"></script>    
+</head>
+<body ng-app="myApp">
+    <table id="table1">
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td class="content">
+                <div ng-controller="myController">
+                    <h1>Select UR Animal for adoptation</h1>
+                    <select ng-model="animal">
+                        <option value="0">Select one from the list</option>
+                        <option ng-repeat="item in animals">
+                                {{item}}
+                        </option>
+                    </select><br/>
+                    <button id="back_button" name="button" onclick="window.location='HomePage.html'">Back</button>
+                    <button id="continue_button" name="button" onclick="window.location='confirm.html'">Continue</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

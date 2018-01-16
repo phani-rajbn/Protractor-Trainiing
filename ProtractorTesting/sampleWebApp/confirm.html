@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="./script.js"></script>    
+    <title>Confimation</title>
+</head>
+<body ng-app="myApp">
+    <table id="table1">
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td class="content">
+                <div ng-controller="myController">
+                    <h1 id="title">Thank you Mr.{{person.name}}</h1>
+                    <p>
+                        Thanks for UR selection. UR Animal adoptation will start shortly after the authorities visit you
+                    </p>
+                    <h2></h2>
+                    <button id="back_button" name="button" onclick="window.location='HomePage.html'">Back</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
