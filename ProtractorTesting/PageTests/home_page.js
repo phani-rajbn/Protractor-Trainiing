@@ -1,3 +1,5 @@
+require('./animal_selection.js');
+
 var home_page = function(){
 	this.provideInputs = function(model, value){
 		element(by.model(model)).sendKeys(value)
@@ -8,6 +10,7 @@ var home_page = function(){
 	}
 	this.clickContinue = function(){
 		element(by.buttonText("Continue")).click();
+		return require('./animal_selection.js');
 	}
 }
 module.exports = new home_page(); 
