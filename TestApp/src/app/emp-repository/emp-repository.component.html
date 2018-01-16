@@ -1,0 +1,24 @@
+<h1>Employee Management Software</h1>
+<input type="text" placeholder="Enter Name to search" name="search" [(ngModel)]="search"><br>
+<div style="display: inline-block;width: 40%">
+	<table border="1">
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Employee Address</th>
+			<th>Options</th>
+		</tr>
+		<tr *ngFor="let item of empList | empFilter:search">
+			<td>{{item.empID}}</td>
+			<td>{{item.empName}}</td>
+			<td>{{item.empAddress}}</td>
+			<td><a href="#" (click)="findEmp(item.empID)">Edit</a></td>	
+		</tr>
+	</table>
+</div>
+<div style="display: inline-block">
+	<h2>Details of the Employee</h2>
+	<p>{{selectedEmp.empID}}</p>
+	<p>{{selectedEmp.empName}}</p>
+	<p>{{selectedEmp.empAddress}}</p>	
+</div>

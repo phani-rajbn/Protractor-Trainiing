@@ -19,6 +19,9 @@ describe('Complete E2E Testing', function() {
 		home_page.provideInputs("person.name", input);
 		var text = home_page.getDynamicText();
 		expect(text).toBe(input);
-		home_page.clickContinue();
+		var animal_page = home_page.clickContinue();
+		animal_page.selectedAnimal(2);
+		var confirm_page = animal_page.clickContinue();
+		expect(confirm_page.getTitle()).toContain("Thank you")
 	});
 });
