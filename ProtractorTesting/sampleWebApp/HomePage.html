@@ -3,7 +3,8 @@
 <head>
     <title>Application management</title>
     <script src="angular.min.js"></script>
-    <script src="./script.js"></script>    
+    <script src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Mystyle.css">    
 </head>
 <body ng-app="myApp">
     <table id="table1" style="margin:3px auto;">
@@ -20,8 +21,13 @@
                         <input type="text" ng-model='person.name'/>
                     </p>
                     <h1>{{person.name}}</h1>
-                    <button name="button" onclick="window.location='animalselection.html'">Continue</button>
+                    <button class="btnClass" id="btnClick" name="button" onclick="window.location='animalselection.html'">Continue</button>
                 </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="HomePage.html">Home Page</a>
             </td>
         </tr>
     </table>
