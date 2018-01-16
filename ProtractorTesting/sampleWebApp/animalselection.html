@@ -17,11 +17,11 @@
             <td class="content">
                 <div ng-controller="myController">
                     <h1>Select UR Animal for adoptation</h1>
-                    <select ng-model="animal">
+                    <select ng-model="animal" class="ng-prestine">
                         <option value="0">Select one from the list</option>
-                        <option ng-repeat="item in animals">
-                                {{item}}
-                        </option>
+                        <option value="1">Tiger Mogli</option>
+                        <option value="2">Samba, the Lion</option>
+                        <option value="3">Molly the elephant</option>
                     </select><br/>
                     <button id="back_button" name="button" onclick="window.location='HomePage.html'">Back</button>
                     <button id="continue_button" name="button" onclick="window.location='confirm.html'">Continue</button>
